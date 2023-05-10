@@ -1,7 +1,6 @@
 // Importera nödvändiga moduler
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
 const FakeYou = require('fakeyou.js');
 const { default: axios } = require('axios');
 
@@ -42,6 +41,8 @@ app.get('/tts', async (req, res) => {
             console.log(ttsResult);
             res.status(200).send({ quote: text, audioPath: audioUrl });
         } else {
+            //Eftersom voicemodel är hårdkodad borde vi aldrig få 404.
+            //Om det sker så saknas modellen i FakeYou
             res.status(404).send({ error: 'Voice model not found' });
         }
     } catch (error) {
@@ -49,7 +50,6 @@ app.get('/tts', async (req, res) => {
         res.status(500).send({ error: 'Error processing TTS request' });
     }
 });
-
 
 // Starta servern
 app.listen(port, () => {
