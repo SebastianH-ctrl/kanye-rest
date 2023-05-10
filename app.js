@@ -7,14 +7,13 @@ const { default: axios } = require('axios');
 // Gör en instans av express
 const app = express();
 app.use(cors());
-app.use('/output', express.static('tts_inference_output'));
 
 const port = process.env.PORT || 3000;
 
 // Här gör vi en ny klient till tjänsten (loggar in på api)
 const fy = new FakeYou.Client({
-    usernameOrEmail: '',
-    password: ''
+    usernameOrEmail: 'sebbz96@hotmail.com',
+    password: 'kanyerest'
 });
 
 // Hämta random kanye quote
