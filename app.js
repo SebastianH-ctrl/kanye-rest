@@ -9,22 +9,34 @@ const app = express();
 app.use(cors());
 
 const port = process.env.PORT || 3000;
+const GIF_API_KEY = 'f4DG1fw5QJjEPwZbmijGhCVHDF3XLtlV';
 
 // Här gör vi en ny klient till tjänsten (loggar in på api)
 const fy = new FakeYou.Client({
     usernameOrEmail: 'sebbz96@hotmail.com',
     password: 'kanyerest'
 });
-/* const fy = new FakeYou.Client({
-    usernameOrEmail: 'linnborgstrom93@gmail.com',
-    password: 'Kanye123'
-}); */
 
 // Hämta random kanye quote
 async function fetchQuote() {
-    const quote = await axios.get('https://api.kanye.rest');
+    const quote = await axios.get('localhost:3000/tts');
     return quote.data.quote;
 }
+
+// Hämta 10 random gifs från GIPGY och returnera en random gif
+app.get('/gif', async (req, res) => {
+    const data = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=${GIF_API_KEY}&q=kanye&limit=10&offset=0&rating=g&lang=en`);
+
+    try {
+    const randomIndex = Math.floor(Math.random() * data.data.data.length);
+    const randomGif = data.data.data[randomIndex].url;
+
+    res.status(200).send({ gif: randomGif });
+    } catch (error) {
+        console.error('Error details:', error); 
+        res.status(500).send({ error: 'Error processing GIF request' });
+    }
+});
 
 // Ändpunkt som returnerar objekt med quote och URL till en ljudfil som läser quote
 app.get('/tts', async (req, res) => {
