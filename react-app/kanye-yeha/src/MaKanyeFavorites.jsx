@@ -14,10 +14,10 @@ function MaKanyeFavorites(props) {
                     <KanyeComponent class="d-block w-100"/>
                 </div>
                 <div class="carousel-item">
-                <KanyeComponent class="d-block w-100"/>
+                    <KanyeComponent class="d-block w-100"/>
                 </div>
                 <div class="carousel-item">
-                <KanyeComponent class="d-block w-100"/>
+                    <KanyeComponent class="d-block w-100"/>
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

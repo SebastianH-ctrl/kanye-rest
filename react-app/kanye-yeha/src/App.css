@@ -1,6 +1,5 @@
 .kanyeImg{
-    
-    height: 22rem;
+    height: 21rem;
     max-width: 620px;
     width: auto;
 }
@@ -10,7 +9,14 @@
 .audio-player{
     display: none;
 }
-
+#centeredDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    color: white;
+}
 .container{
     background-color: #600160;
     align-items: center;
