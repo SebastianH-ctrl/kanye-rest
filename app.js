@@ -15,6 +15,10 @@ const fy = new FakeYou.Client({
     usernameOrEmail: 'sebbz96@hotmail.com',
     password: 'kanyerest'
 });
+/* const fy = new FakeYou.Client({
+    usernameOrEmail: 'linnborgstrom93@gmail.com',
+    password: 'Kanye123'
+}); */
 
 // Hämta random kanye quote
 async function fetchQuote() {
