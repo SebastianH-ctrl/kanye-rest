@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 
 const port = process.env.PORT || 3000;
-const GIF_API_KEY = "";
+const GIF_API_KEY = "f4DG1fw5QJjEPwZbmijGhCVHDF3XLtlV";
 
 // Här gör vi en ny klient till tjänsten (loggar in på api)
 const fy = new FakeYou.Client({
@@ -31,7 +31,7 @@ app.get("/gif", async (req, res) => {
 
   try {
     const randomIndex = Math.floor(Math.random() * data.data.data.length);
-    const randomGif = data.data.data[randomIndex].url;
+    const randomGif = data.data.data[randomIndex].images;
 
     res.status(200).send({ gif: randomGif });
   } catch (error) {
