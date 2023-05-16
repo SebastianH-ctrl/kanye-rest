@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 
 const port = process.env.PORT || 3000;
-const GIF_API_KEY = 'f4DG1fw5QJjEPwZbmijGhCVHDF3XLtlV';
+const GIF_API_KEY = '';
 
 // Här gör vi en ny klient till tjänsten (loggar in på api)
 const fy = new FakeYou.Client({
