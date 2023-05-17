@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ReactAudioPlayer from 'react-audio-player'
 
 function KanyeComponent(props) {
     const kanyeImgs = [require('./images/kanye1.jpg'), require('./images/kanye2.jpg'), require('./images/kanye3.jpg'), require('./images/kanye4.jpg'), require('./images/kanye5.jpg')]
+    const audioPlayer = useRef();
+
+    const handlePlay = () => {
+      audioPlayer.current.audioEl.current.play();
+    };
+
+    const handleNewQuote = () => {
+      props.getRequest();
+    };
+
     console.log(kanyeImgs[0])
     console.log((Math.random() * 5) - 1);
     return (
@@ -25,11 +35,12 @@ function KanyeComponent(props) {
             </div>
         </div>
           <div>
-             <button className="btn btn-warning mt-4 mb-3 ml-3">Let me talk!</button>
-             <button className="btn btn-warning mt-4 mb-3 ml-3">Give me another!</button>
+             <button className="btn btn-warning mt-4 mb-3 ml-3" onClick={handlePlay}>Let me talk!</button>
+             <button className="btn btn-warning mt-4 mb-3 ml-3" onClick={handleNewQuote}>Give me another!</button>
           </div>
 
           <ReactAudioPlayer
+            ref={audioPlayer}
             className="audio-player"
             src={props.audioPath}
             autoPlay 
