@@ -42,13 +42,13 @@ const App = () => {
         )}
       </div>
       {showQuote ? (
-        <div>
+        <div className="container">
           {data ? (
             <KanyeComponent quote={data.quote} audioPath={data.audioPath} />
           ) : (
-            <div>
-              <h1>Loading</h1>
-              <img alt="loading" src={gif} />
+            <div className="container">
+              <h2 className="title">You have to wait, Kanye is late...</h2>
+              <img className="kanyeImg" alt="loading" src={gif} />
             </div>
           )}
         </div>

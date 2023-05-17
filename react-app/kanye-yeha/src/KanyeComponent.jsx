@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactAudioPlayer from 'react-audio-player'
-import star from './files/star.svg'
-import starFilled from './files/star-fill.svg'
 
 function KanyeComponent(props) {
+    const kanyeImgs = [require('./images/kanye1.jpg'), require('./images/kanye2.jpg'), require('./images/kanye3.jpg'), require('./images/kanye4.jpg'), require('./images/kanye5.jpg')]
+    console.log(kanyeImgs[0])
+    console.log((Math.random() * 5) - 1);
     return (
         <div className="container" id='innerKanye'>
             <div className='star-container'>
@@ -14,11 +15,11 @@ function KanyeComponent(props) {
             </svg>
           </button>
             </div>
-          <img className='kanyeImg' src="https://assets.vogue.com/photos/633a6fbd4956fb0b77008c17/4:3/w_1920,c_limit/Kanye-West-Paris-Couture-FW21-Shows-Photographed-by-Acielle---Styledumonde.jpg" alt="kanye"></img>
-          <div class="blockquote-wrapper">
-            <div class="blockquote">
+          <img className='kanyeImg' src={kanyeImgs[Math.floor((Math.random() * 5))]} alt="kanye"></img>
+          <div className="blockquote-wrapper">
+            <div className="blockquote">
                 <h1>
-                Intuitive design happens when current knowledge is the same as the target knowledge.
+                {props.quote}
                 </h1>
                 <h4>&mdash; Kanye West - <em>Twitter user</em></h4>
             </div>
@@ -30,8 +31,8 @@ function KanyeComponent(props) {
 
           <ReactAudioPlayer
             className="audio-player"
-            src="https://storage.googleapis.com/vocodes-public/tts_inference_output/b/7/4/vocodes_b74403d8-35b3-421d-ae85-9cf9837c5a62.wav"
-            /* autoPlay */ 
+            src={props.audioPath}
+            autoPlay 
             controls
           />
 
