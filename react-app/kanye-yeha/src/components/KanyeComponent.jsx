@@ -9,11 +9,11 @@ function KanyeComponent({
   autoPlayAudio = true,
 }) {
   const kanyeImgs = [
-    require("./images/kanye1.jpg"),
-    require("./images/kanye2.jpg"),
-    require("./images/kanye3.jpg"),
-    require("./images/kanye4.jpg"),
-    require("./images/kanye5.jpg"),
+    require("../images/kanye1.jpg"),
+    require("../images/kanye2.jpg"),
+    require("../images/kanye3.jpg"),
+    require("../images/kanye4.jpg"),
+    require("../images/kanye5.jpg"),
   ];
   const audioPlayer = useRef();
   const [isStarFilled, setIsStarFilled] = useState(false);

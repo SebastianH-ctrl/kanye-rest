@@ -1,3 +1,5 @@
+/* css styling for the App component */
+
 .kanyeImg {
     max-width: 100%;
     height: auto;
@@ -67,7 +69,7 @@
  }
  @font-face {
     font-family: Abril;
-    src: url("./files/AbrilFatface-Regular.ttf");
+    src: url("../../files/AbrilFatface-Regular.ttf");
   }
  
  /* Blockquote header */

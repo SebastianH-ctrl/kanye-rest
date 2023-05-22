@@ -9,7 +9,7 @@ import {
 } from "react-accessible-accordion";
 
 // Demo styles, see 'Styles' section below for some notes on use.
-import "./accordionStyle.css";
+import "./css/accordionStyle.css";
 import KanyeComponent from "./KanyeComponent";
 
 function FavouritesList() {
