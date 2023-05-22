@@ -3,8 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import axios from "axios";
 import KanyeComponent from "./KanyeComponent";
-import MaKanyeFavorites from "./MaKanyeFavorites";
-import FavouritesList from "./FavouritesList";
+import FavoritesList from "./FavouritesList";
 
 const App = () => {
   const [data, setData] = useState();
@@ -74,6 +73,7 @@ const App = () => {
           <img className="kanyeGif" alt="loading" src={gif} />
         </div>
       ) : null}
+      {showFavourites ? <FavoritesList /> : null}
     </div>
   );
 };
