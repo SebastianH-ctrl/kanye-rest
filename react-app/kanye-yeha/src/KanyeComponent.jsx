@@ -35,7 +35,7 @@ function KanyeComponent({
 
     if (isStarFilled) {
       // Remove quote from favorites if the star is already filled
-      kanyeFavs = kanyeFavs.filter((fav) => quote !== quote);
+      kanyeFavs = kanyeFavs.filter((fav) => quote !== fav.quote);
     } else {
       // Add quote to favorites if the star is not filled
       kanyeFavs.push({ quote: quote, audioPath: audioPath });
@@ -74,14 +74,11 @@ function KanyeComponent({
         </div>
       </div>
       <div>
-        <button className="btn btn-warning mt-4 mb-3 ml-3" onClick={handlePlay}>
+        <button className="styledButton" onClick={handlePlay}>
           Let me talk!
         </button>
         {showControls && (
-          <button
-            className="btn btn-warning mt-4 mb-3 ml-3"
-            onClick={handleNewQuote}
-          >
+          <button className="styledButton" onClick={handleNewQuote}>
             Give me another!
           </button>
         )}

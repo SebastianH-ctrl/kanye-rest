@@ -38,23 +38,26 @@ const App = () => {
     <div className="container">
       <div className="container" id="centeredDiv">
         <h1 className="title">Kanye Rest</h1>
-        <button
-          className="styledButton"
-          type="button"
-          style={{
-            display: showButton ? "block" : "none",
-          }}
-          onClick={() => getRequest()}
-        >
-          Show quote
-        </button>
-        <button
-          className="btn btn-info mt-3 mb-3"
-          type="button"
-          onClick={() => setShowFavourites(!showFavourites)}
-        >
-          {showFavourites ? "Hide" : "Show"} favourites
-        </button>
+        <div className="buttonContainer">
+          <button
+            className="styledButton"
+            type="button"
+            style={{
+              display: showButton ? "block" : "none",
+            }}
+            onClick={() => getRequest()}
+          >
+            Show quote
+          </button>
+          <button
+            className="styledButton"
+            style={{ backgroundColor: "#17a2b8" }}
+            type="button"
+            onClick={() => setShowFavourites(!showFavourites)}
+          >
+            {showFavourites ? "Hide" : "Show"} favourites
+          </button>
+        </div>
       </div>
       {showQuote && !showFavourites ? (
         <div className="container">
