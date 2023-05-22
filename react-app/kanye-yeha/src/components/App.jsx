@@ -1,17 +1,23 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import "./App.css";
+import "./css/App.css";
 import axios from "axios";
 import KanyeComponent from "./KanyeComponent";
 import FavoritesList from "./FavouritesList";
 
+/* The App acts as the head-component, handling the program flow and the API-calls using axios. */
+
 const App = () => {
+  /* A state that handles our fetched API-data */
   const [data, setData] = useState();
   const [gif, setGif] = useState();
+  /* The following states handles the program flow and what is shown. */
   const [showQuote, setShowQuote] = useState(false);
   const [showButton, setShowButton] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showFavourites, setShowFavourites] = useState(false);
+
+  /* The useEffect makes a get-request to fetch a GIF when the application first starts. */
 
   useEffect(() => {
     axios.get("http://localhost:3000/gif", {}).then(function (response) {
@@ -20,6 +26,8 @@ const App = () => {
     });
     console.log(data);
   }, [data]);
+
+  /* The function fetches a quote from our API, and then shows the sets the showQuote-state to true. */
 
   const getRequest = () => {
     setShowButton(false);
@@ -34,6 +42,7 @@ const App = () => {
     });
   };
 
+  /* Returns the jsx for the App-component */
   return (
     <div className="container">
       <div className="container" id="centeredDiv">
@@ -59,6 +68,7 @@ const App = () => {
           </button>
         </div>
       </div>
+      {/* Ternary expressions that conditionally renders our components based on the states. */}
       {showQuote && !showFavourites ? (
         <div className="container">
           {data ? (
