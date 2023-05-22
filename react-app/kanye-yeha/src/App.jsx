@@ -4,6 +4,7 @@ import "./App.css";
 import axios from "axios";
 import KanyeComponent from "./KanyeComponent";
 import MaKanyeFavorites from "./MaKanyeFavorites";
+import FavouritesList from "./FavouritesList";
 
 const App = () => {
   const [data, setData] = useState();
@@ -11,6 +12,7 @@ const App = () => {
   const [showQuote, setShowQuote] = useState(false);
   const [showButton, setShowButton] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
+  const [showFavourites, setShowFavourites] = useState(false);
 
   useEffect(() => {
     axios.get("http://localhost:3000/gif", {}).then(function (response) {
@@ -47,8 +49,15 @@ const App = () => {
         >
           Show quote
         </button>
+        <button
+          className="btn btn-info mt-3 mb-3"
+          type="button"
+          onClick={() => setShowFavourites(!showFavourites)}
+        >
+          {showFavourites ? "Hide" : "Show"} favourites
+        </button>
       </div>
-      {showQuote ? (
+      {showQuote && !showFavourites ? (
         <div className="container">
           {data ? (
             <KanyeComponent
