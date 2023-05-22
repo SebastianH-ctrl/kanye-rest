@@ -32,8 +32,10 @@ function FavouritesList() {
                                 </AccordionItemButton>
                             </AccordionItemHeading>
                             <AccordionItemPanel>
-                                <KanyeComponent quote={fav.quote} audiopath={fav.audiopath} />
+                                {console.log(fav.audioPath)}
+                                <KanyeComponent quote={fav.quote} audioPath={fav.audioPath} showControls={false} />
                             </AccordionItemPanel>
+
                         </AccordionItem>
                     ))}
                 </Accordion>
