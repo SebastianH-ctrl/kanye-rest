@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import ReactAudioPlayer from 'react-audio-player'
 
-function KanyeComponent({ quote, audioPath, getRequest, showControls = true }) {
+function KanyeComponent({ quote, audioPath, getRequest, showControls = true, autoPlayAudio = true }) {
     const kanyeImgs = [require('./images/kanye1.jpg'), require('./images/kanye2.jpg'), require('./images/kanye3.jpg'), require('./images/kanye4.jpg'), require('./images/kanye5.jpg')]
     const audioPlayer = useRef();
     const [isStarFilled, setIsStarFilled] = useState(false);
@@ -61,7 +61,7 @@ function KanyeComponent({ quote, audioPath, getRequest, showControls = true }) {
               ref={audioPlayer}
               className="audio-player"
               src={audioPath}
-              autoPlay 
+              autoPlay={autoPlayAudio}
               controls
           />
       </div>
