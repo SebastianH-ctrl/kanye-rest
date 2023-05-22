@@ -9,7 +9,7 @@ import {
 } from "react-accessible-accordion";
 
 // Demo styles, see 'Styles' section below for some notes on use.
-import "react-accessible-accordion/dist/fancy-example.css";
+import "./accordionStyle.css";
 import KanyeComponent from "./KanyeComponent";
 
 function FavouritesList() {
@@ -27,9 +27,7 @@ function FavouritesList() {
           {favorites.map((fav, index) => (
             <AccordionItem key={index}>
               <AccordionItemHeading>
-                <AccordionItemButton>
-                  {`FAVOURITE ${index + 1}`}
-                </AccordionItemButton>
+                <AccordionItemButton>{fav.quote}</AccordionItemButton>
               </AccordionItemHeading>
               <AccordionItemPanel>
                 {console.log(fav.audioPath)}
