@@ -51,7 +51,7 @@ function KanyeComponent(props) {
             </div>
             <div>
                 <button className="btn btn-warning mt-4 mb-3 ml-3" onClick={handlePlay}>Let me talk!</button>
-                <button className="btn btn-warning mt-4 mb-3 ml-3" onClick={handleNewQuote}>Give me another!</button>
+                <button className="btn btn-warning mt-4 mb-3 ml-3" onClick={handleNewQuote}>Give me another!</button>         
             </div>
             <ReactAudioPlayer
                 ref={audioPlayer}
