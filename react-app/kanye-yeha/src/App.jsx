@@ -38,27 +38,33 @@ const App = () => {
       <div className="container" id="centeredDiv">
         <h1 className="title">Kanye Rest</h1>
         <button
-          className="btn btn-warning mt-3 mb-3"
+          className="styledButton"
           type="button"
-          style={{ display: showButton ? "block" : "none" }}
+          style={{
+            display: showButton ? "block" : "none",
+          }}
           onClick={() => getRequest()}
-          >
-            Show quote
-          </button>
+        >
+          Show quote
+        </button>
       </div>
       {showQuote ? (
         <div className="container">
           {data ? (
-            <KanyeComponent quote={data.quote} audioPath={data.audioPath} getRequest={getRequest} />
-          ) : null }
+            <KanyeComponent
+              quote={data.quote}
+              audioPath={data.audioPath}
+              getRequest={getRequest}
+            />
+          ) : null}
         </div>
       ) : null}
       {isLoading ? (
         <div className="container">
           <h2 className="title">You have to wait, Kanye is late...</h2>
-          <img className="kanyeImg" alt="loading" src={gif} />
+          <img className="kanyeGif" alt="loading" src={gif} />
         </div>
-      ) : null} 
+      ) : null}
     </div>
   );
 };
