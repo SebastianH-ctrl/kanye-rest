@@ -19,6 +19,7 @@
     text-align: left;
     border: none;
     border-radius: 20px;
+    margin-bottom: 5px;
 }
 
 .accordion__button:hover {

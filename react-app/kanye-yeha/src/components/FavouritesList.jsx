@@ -21,6 +21,7 @@ function FavouritesList() {
     console.log("in useeffect: ", favorites);
     console.log("in useeffect kanyeFavs: ", kanyeFavs);
   }, []);
+  //Method to remove a favorite from the localStorage
   const removeFavorite = (fav) => {
     const favoritesList = favorites.filter(item => item !== fav)
     setFavorites(favoritesList);
@@ -42,9 +43,7 @@ function FavouritesList() {
                 <div className="delete-container">
                   <button type="button" className="btn btn-danger" id="delete-button"
                     onClick={() => removeFavorite(fav)}
-                  >
-                    x
-                  </button>
+                  >x</button>
                 </div>
                 <KanyeComponent
                   quote={fav.quote}
