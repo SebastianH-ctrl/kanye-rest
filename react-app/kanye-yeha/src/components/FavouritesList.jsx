@@ -18,8 +18,16 @@ function FavouritesList() {
   useEffect(() => {
     const kanyeFavs = JSON.parse(localStorage.getItem("kanyeFavs") || "[]");
     setFavorites(kanyeFavs);
+    console.log("in useeffect: ", favorites);
+    console.log("in useeffect kanyeFavs: ", kanyeFavs);
   }, []);
-
+  const removeFavorite = (fav) => {
+    const favoritesList = favorites.filter(item => item !== fav)
+    setFavorites(favoritesList);
+    localStorage.setItem("kanyeFavs", JSON.stringify(favoritesList));
+  
+  };
+  
   return (
     <div>
       {favorites.length ? (
@@ -31,6 +39,13 @@ function FavouritesList() {
               </AccordionItemHeading>
               <AccordionItemPanel>
                 {console.log(fav.audioPath)}
+                <div className="delete-container">
+                  <button type="button" className="btn btn-danger" id="delete-button"
+                    onClick={() => removeFavorite(fav)}
+                  >
+                    x
+                  </button>
+                </div>
                 <KanyeComponent
                   quote={fav.quote}
                   audioPath={fav.audioPath}
