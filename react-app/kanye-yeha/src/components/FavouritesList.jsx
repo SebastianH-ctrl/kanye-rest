@@ -42,7 +42,7 @@ function FavouritesList() {
           ))}
         </Accordion>
       ) : (
-        <p>You haven't added any favourites yet.</p>
+        <p className="title">You haven't added any favourites yet.</p>
       )}
     </div>
   );
