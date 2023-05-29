@@ -16,7 +16,6 @@ const App = () => {
   const [showButton, setShowButton] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [showFavourites, setShowFavourites] = useState(false);
-
   /* The useEffect makes a get-request to fetch a GIF when the application first starts. */
 
   useEffect(() => {
@@ -41,6 +40,8 @@ const App = () => {
       setIsLoading(false);
     });
   };
+  
+  
 
   /* Returns the jsx for the App-component */
   return (
