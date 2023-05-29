@@ -18,8 +18,6 @@ function FavouritesList() {
   useEffect(() => {
     const kanyeFavs = JSON.parse(localStorage.getItem("kanyeFavs") || "[]");
     setFavorites(kanyeFavs);
-    console.log("in useeffect: ", favorites);
-    console.log("in useeffect kanyeFavs: ", kanyeFavs);
   }, []);
   //Method to remove a favorite from the localStorage
   const removeFavorite = (fav) => {
