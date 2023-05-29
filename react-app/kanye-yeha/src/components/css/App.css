@@ -1,4 +1,4 @@
-/* css styling for the App component */
+/* css styling for the Kanye component */
 
 .kanyeImg {
     max-width: 100%;
@@ -80,6 +80,7 @@
      align-self: center;
      max-width: 600px;
  }
+ /* imports a font from files */
  @font-face {
     font-family: Abril;
     src: url("../../files/AbrilFatface-Regular.ttf");
@@ -125,12 +126,13 @@
      z-index: 2;
  }
  
- /* increase header size after 600px */
+ /* increase line-height after 600px */
  @media all and (min-width: 600px) {
      .blockquote h1 {
          font-size: 1.8rem;
          line-height: 1.2;
     }
+    
  }
  
  /* Blockquote subheader */

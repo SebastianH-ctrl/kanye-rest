@@ -8,13 +8,12 @@ import {
   AccordionItemPanel,
 } from "react-accessible-accordion";
 
-// Demo styles, see 'Styles' section below for some notes on use.
 import "./css/accordionStyle.css";
 import KanyeComponent from "./KanyeComponent";
 
 function FavouritesList() {
   const [favorites, setFavorites] = useState([]);
-
+  //Useeffect to get from local storage and se the array of favorites
   useEffect(() => {
     const kanyeFavs = JSON.parse(localStorage.getItem("kanyeFavs") || "[]");
     setFavorites(kanyeFavs);

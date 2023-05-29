@@ -28,10 +28,10 @@ function KanyeComponent({
   const handleNewQuote = () => {
     getRequest();
   };
+  //Method to check if the random quote is in the favorites, if so the star is filled otherwise the star is outlined
   function checkIfFavorite(quote){
     const kanyeFavs = JSON.parse(localStorage.getItem("kanyeFavs") || "[]");
     const favoritesList = kanyeFavs.filter(item => item.quote === quote);
-    console.log(favoritesList.length === 1);
     return favoritesList.length === 1;
 
   }
@@ -40,7 +40,7 @@ function KanyeComponent({
     let kanyeFavs = JSON.parse(localStorage.getItem("kanyeFavs")) || [];
 
     if (isStarFilled) {
-      // Remove quote from favorites if the star is already filled
+      // Remove quote from favorites if the star is filled
       kanyeFavs = kanyeFavs.filter((fav) => quote !== fav.quote);
     } else {
       // Add quote to favorites if the star is not filled
