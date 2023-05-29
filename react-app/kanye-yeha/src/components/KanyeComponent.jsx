@@ -16,7 +16,7 @@ function KanyeComponent({
     require("../images/kanye5.jpg"),
   ];
   const audioPlayer = useRef();
-  const [isStarFilled, setIsStarFilled] = useState(false);
+  const [isStarFilled, setIsStarFilled] = useState(checkIfFavorite(quote));
   const [kanyeImg, setKanyeImg] = useState(
     kanyeImgs[Math.floor(Math.random() * kanyeImgs.length)]
   );
@@ -28,7 +28,13 @@ function KanyeComponent({
   const handleNewQuote = () => {
     getRequest();
   };
+  function checkIfFavorite(quote){
+    const kanyeFavs = JSON.parse(localStorage.getItem("kanyeFavs") || "[]");
+    const favoritesList = kanyeFavs.filter(item => item.quote === quote);
+    console.log(favoritesList.length === 1);
+    return favoritesList.length === 1;
 
+  }
   const handleStarClick = () => {
     setIsStarFilled(!isStarFilled);
     let kanyeFavs = JSON.parse(localStorage.getItem("kanyeFavs")) || [];
