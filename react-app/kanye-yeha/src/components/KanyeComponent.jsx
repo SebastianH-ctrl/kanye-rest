@@ -44,7 +44,7 @@ function KanyeComponent({
     localStorage.setItem("kanyeFavs", JSON.stringify(kanyeFavs));
     console.log(JSON.parse(localStorage.getItem("kanyeFavs")));
   };
-
+ 
   return (
     <div className="container" id="innerKanye">
       {showControls && (
