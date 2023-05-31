@@ -1,20 +1,25 @@
 // Importera nödvändiga moduler
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const FakeYou = require("fakeyou.js");
 const { default: axios } = require("axios");
+
+console.log(process.env.EMAIL);
+console.log(process.env.PASSWORD);
+console.log(process.env.GIPHY_KEY);
 
 // Gör en instans av express
 const app = express();
 app.use(cors());
 
 const port = process.env.PORT || 3000;
-const GIF_API_KEY = "f4DG1fw5QJjEPwZbmijGhCVHDF3XLtlV";
+const GIF_API_KEY = process.env.GIPHY_KEY;
 
 // Här gör vi en ny klient till tjänsten (loggar in på api)
 const fy = new FakeYou.Client({
-  usernameOrEmail: "sebbz96@hotmail.com",
-  password: "kanyerest",
+  usernameOrEmail: process.env.EMAIL,
+  password: process.env.PASSWORD,
 });
 
 // Hämta random kanye quote
