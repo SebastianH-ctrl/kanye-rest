@@ -5,10 +5,6 @@ const cors = require("cors");
 const FakeYou = require("fakeyou.js");
 const { default: axios } = require("axios");
 
-console.log(process.env.EMAIL);
-console.log(process.env.PASSWORD);
-console.log(process.env.GIPHY_KEY);
-
 // Gör en instans av express
 const app = express();
 app.use(cors());
