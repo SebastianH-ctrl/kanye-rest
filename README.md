@@ -4,13 +4,16 @@ Projektarbete för kursen Flerplattformsapplikationer med webbtekniker.
 
 Skapad av: [Sebastian, Andre, Linn]
 
-Denna applikation är en mashup-tjänst som använder sig av två olika API:er. Det ena API:et är ett API som hämtar citat från Kanye West och det andra API:et är ett text-to-speech API som konverterar citaten till tal i form av en AI som efterliknar kanyes röst.
+Denna applikation är en mashup-tjänst som använder sig av tre olika API:er. Det ena API:et är ett API som hämtar citat från Kanye West och det andra API:et är ett text-to-speech API som konverterar citaten till tal i form av en AI som efterliknar kanyes röst.
 
 #
 
 TTS-apiet är inte publikt och vi valde därför att använda oss utav en Node/express server för att kunna göra anrop till API:et från servern istället för från klienten. Denna backend används sedan som ett eget API som klienten kan göra anrop till lokalt.
 
 #
+
+Det tredje och sista API:et är GIPHY som vi använder för att visa upp en gif medan vi väntar på att TTS-apiet ska svara.
+
 # Körinstruktioner
 
 1. Installera moduler
@@ -34,6 +37,12 @@ Om servern startar på port 3000 så är allt som det ska. Om inte så kan du ä
 3. Starta klient
 
 navigera inuti kanye-yeha mappen och kör följande kommando:
+
+````
+npm install
+````````
+
+Efter att ha installerat alla moduler så kan du starta klienten med följande kommando:
 
 ````
 npm start
